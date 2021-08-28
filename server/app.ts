@@ -7,6 +7,10 @@ app.get('/', (_req: Request, res: Response) => {
   res.send('hello world');
 });
 
+app.post('/api/shorten', (_req: Request, res: Response) => {
+  res.send('asd');
+});
+
 app.listen(PORT, () => {
   return console.log(`istening on ${PORT}`);
 });
