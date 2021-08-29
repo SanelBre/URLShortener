@@ -1,6 +1,7 @@
 .App {
 	height: 100%;
 	padding: 100px;
+	overflow-y: scroll;
 }
 
 .for-admin {
@@ -32,7 +33,27 @@
 	text-shadow: 3px 3px #100161;
 }
 
+.table {
+	padding-bottom: 40px;
+}
+
 .table tr td {
 	border-color: #fff !important;
 	color: #fff;
+}
+
+.response {
+	margin: 20px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.response p {
+	margin: 0 5px 5px !important;
+}
+
+.response button {
+	margin-left: 5px;
 }

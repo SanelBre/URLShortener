@@ -4,7 +4,7 @@ import { CustomError } from "../utils/error";
 
 const visitShorten = express.Router();
 
-visitShorten.get('/:shortened', async (
+visitShorten.get('/api/:shortened', async (
     req: Request,
     res: Response
 ) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Router, Switch } from "react-router-dom";
+import { Route, Router, Redirect, Switch } from "react-router-dom";
 import './App.css';
 
 import createBrowserHistory from "history/createBrowserHistory";
@@ -15,8 +15,11 @@ function App() {
           <Route exact={true} path="/admin">
             <Admin />
           </Route>
-          <Route path="/">
+          <Route exact={true} path="/home">
             <Home />
+          </Route>
+          <Route path="/">
+            <Redirect to="/home" />
           </Route>
         </Switch>
       </Router>
