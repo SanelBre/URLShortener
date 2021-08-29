@@ -7,7 +7,7 @@ app.get('/', (_req: Request, res: Response) => {
   res.send('hello world');
 });
 
-app.post('/api/shorten', (_req: Request, res: Response) => {
+app.post('/api/shortener', (_req: Request, res: Response) => {
   res.send('asd');
 });
 
