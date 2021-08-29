@@ -15,7 +15,7 @@ export const Home = (): JSX.Element => {
         url
       });
       setURL("");
-      setURLShort(response.data);
+      setURLShort(response.data.shortened);
     }
   
     const removeResponse = (): void => setURLShort("");

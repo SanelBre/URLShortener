@@ -1,8 +1,13 @@
 import "express-async-errors";
-import express, { Request, Response } from 'express';
+import express from 'express';
 import { json } from "body-parser";
 import { PORT } from './utils/env';
-import { requestShorten, getShorten, proxyShorten } from './handlers';
+import {
+  requestShorten,
+  getShorten,
+  proxyShorten,
+  visitShorten
+} from './handlers';
 import { ErrorCatcher } from "./middlewares";
 import { CustomError } from "./utils/error";
 import { startDb } from "./utils/db";
@@ -14,9 +19,14 @@ app.use(json());
 app.use(requestShorten);
 app.use(getShorten);
 app.use(proxyShorten);
+app.use(visitShorten);
 
 app.all("*", async () => {
-  throw new CustomError("NOT_FOUND", 404, "the route is not found");
+  throw new CustomError(
+    "NOT_FOUND",
+    404,
+    "the route is not found"
+  );
 });
 
 app.use(ErrorCatcher);
