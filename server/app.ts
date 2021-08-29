@@ -5,6 +5,7 @@ import { PORT } from './utils/env';
 import { requestShorten, getShorten, proxyShorten } from './handlers';
 import { ErrorCatcher } from "./middlewares";
 import { CustomError } from "./utils/error";
+import { startDb } from "./utils/db";
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.all("*", async () => {
 
 app.use(ErrorCatcher);
 
-app.listen(PORT, () => {
-  return console.log(`istening on ${PORT}`);
-});
+startDb().then(() => {
+  app.listen(PORT, () => {
+    return console.log(`listening on ${PORT}`);
+  });
+})
