@@ -29,3 +29,19 @@ The project tech stack:
 - Node.js
 - Express
 - Mongoose / MongooDB
+
+## Running the project
+
+To run the project it would be required that you have installed node and npm.
+
+Additional to that it would be required to install deppendencies for the server, which is the root of the project, and deppendencies for the client, which is located under the client dir.
+
+Set mongodb credentials through the env variable, in order for the app to connect to the databse.
+
+Starting the project can be done by running: __npm run start:full__, this will start both client and the server.
+
+## Inside the app
+
+Once the app start, it will place the initial screen under the /home path, from where the user can enter a valid url (eg https://linkedin.com). Once the user does submit the url, if the request succeeds the server will response back with a hash that will be later used for accessing the original url. Acessing that original url is done by hitting the domain of the app with the path /api/{hash}.
+
+The admin page is located under the /admin path, where we have all the listings of the provided urls, along with the visit counter.
